@@ -97,4 +97,35 @@ public extension Auth {
             }
         }
     }
+    
+    enum Apple {
+        public struct Request: Codable, Equatable {
+            public let firstName: String?
+            public let lastName: String?
+            public let appleIdentityToken: String
+            
+            public init(
+                firstName: String? = nil,
+                lastName: String? = nil,
+                appleIdentityToken: String
+            ) {
+                self.firstName = firstName
+                self.lastName = lastName
+                self.appleIdentityToken = appleIdentityToken
+            }
+        }
+        
+        public struct Response: Codable, Equatable {
+            public let token: TokenRefresh.Response
+            public let user: User.Detail.Response
+
+            public init(
+                token: TokenRefresh.Response,
+                user: User.Detail.Response
+            ) {
+                self.token = token
+                self.user = user
+            }
+        }
+    }
 }

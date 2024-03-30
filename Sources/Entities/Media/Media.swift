@@ -41,10 +41,18 @@ public extension Media {
     enum Download {
         public struct Request: Codable, Equatable {
             public let id: UUID
+            
+            public init(id: UUID) {
+                self.id = id
+            }
         }
         
         public struct Response: Codable, Equatable {
             public let data: Data
+            
+            public init(data: Data) {
+                self.data = data
+            }
         }
     }
 }

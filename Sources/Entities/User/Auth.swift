@@ -35,17 +35,20 @@ public extension Auth {
         public struct Request: Codable, Equatable {
             public let email: String
             public let password: String
+            public let location: Location
             public let firstName: String?
             public let lastName: String?
 
             public init(
                 email: String,
                 password: String,
+                location: Location,
                 firstName: String? = nil,
                 lastName: String? = nil
             ) {
                 self.email = email
                 self.password = password
+                self.location = location
                 self.firstName = firstName
                 self.lastName = lastName
             }

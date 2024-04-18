@@ -12,10 +12,16 @@ public extension Places {
         
         public struct Response: Codable, Equatable {
             public struct Suggestion: Codable, Equatable {
+                public let placeId: String
                 public let mainText: String
                 public let secondaryText: String
                 
-                public init(mainText: String, secondaryText: String) {
+                public init(
+                    placeId: String,
+                    mainText: String,
+                    secondaryText: String
+                ) {
+                    self.placeId = placeId
                     self.mainText = mainText
                     self.secondaryText = secondaryText
                 }

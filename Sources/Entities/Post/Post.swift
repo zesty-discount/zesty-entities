@@ -67,4 +67,35 @@ public extension Post {
             }
         }
     }
+    
+    enum Detail {
+        public struct Request: Codable, Equatable {
+            public init() {}
+        }
+        
+        public struct Response: Codable, Equatable {
+            public let id: UUID
+            public let user: User.Detail.Response
+            public let text: String
+            public let imageIDs: [UUID]
+            public let videoIDs: [UUID]
+            public let tags: [String]
+            
+            public init(
+                id: UUID,
+                user: User.Detail.Response,
+                text: String,
+                imageIDs: [UUID],
+                videoIDs: [UUID],
+                tags: [String]
+            ) {
+                self.id = id
+                self.user = user
+                self.text = text
+                self.imageIDs = imageIDs
+                self.videoIDs = videoIDs
+                self.tags = tags
+            }
+        }
+    }
 }

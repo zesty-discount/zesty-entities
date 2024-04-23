@@ -5,7 +5,6 @@ public enum Business {}
 public extension Business {
     enum Create {
         public struct Request: Codable, Equatable {
-            public let userID: UUID
             public let name: String
             public let openingTimes: [OpeningTime]
             public let industry: String
@@ -18,7 +17,6 @@ public extension Business {
             public let isVerified: Bool
             
             public init(
-                userID: UUID,
                 name: String,
                 openingTimes: [OpeningTime],
                 industry: String,
@@ -30,7 +28,6 @@ public extension Business {
                 avatarId: UUID,
                 isVerified: Bool
             ) {
-                self.userID = userID
                 self.name = name
                 self.openingTimes = openingTimes
                 self.industry = industry

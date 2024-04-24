@@ -76,7 +76,7 @@ public extension Post {
         public struct Response: Codable, Equatable {
             public let id: UUID
             public let user: User.Detail.Response
-            public let comments: [Comment.Detail.Response]
+            public let comments: [Comment.List.Response]
             public let text: String
             public let imageIDs: [UUID]
             public let videoIDs: [UUID]
@@ -85,7 +85,7 @@ public extension Post {
             public init(
                 id: UUID,
                 user: User.Detail.Response,
-                comments: [Comment.Detail.Response],
+                comments: [Comment.List.Response],
                 text: String,
                 imageIDs: [UUID],
                 videoIDs: [UUID],

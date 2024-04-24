@@ -16,17 +16,20 @@ public extension Comment {
         
         public struct Response: Codable, Equatable {
             public let id: UUID
+            public let createdAt: Date
             public let text: String
             public let postID: UUID
             public let userID: UUID
             
             public init(
                 id: UUID,
+                createdAt: Date,
                 text: String,
                 postID: UUID,
                 userID: UUID
             ) {
                 self.id = id
+                self.createdAt = createdAt
                 self.text = text
                 self.postID = postID
                 self.userID = userID
@@ -34,6 +37,31 @@ public extension Comment {
         }
     }
     
+    enum List {
+        public struct Response: Codable, Equatable {
+            public let id: UUID
+            public let createdAt: Date
+            public let text: String
+            public let postID: UUID
+            public let user: User.List.Response
+
+            public init(
+                id: UUID,
+                createdAt: Date,
+                text: String,
+                postID: UUID,
+                user: User.List.Response
+            ) {
+                self.id = id
+                self.createdAt = createdAt
+                self.text = text
+                self.postID = postID
+                self.user = user
+            }
+        }
+    }
+    
+    @available(*, deprecated, message: "Replying to comments has been put on hold for now")
     enum Reply {
         public struct Request: Codable, Equatable {
             public let text: String
@@ -64,27 +92,6 @@ public extension Comment {
                 self.parentId = parentId
                 self.postID = postID
                 self.userID = userID
-            }
-        }
-    }
-    
-    enum List {
-        public struct Response: Codable, Equatable {
-            public let id: UUID
-            public let text: String
-            public let postID: UUID
-            public let user: User.List.Response
-
-            public init(
-                id: UUID,
-                text: String,
-                postID: UUID,
-                user: User.List.Response
-            ) {
-                self.id = id
-                self.text = text
-                self.postID = postID
-                self.user = user
             }
         }
     }

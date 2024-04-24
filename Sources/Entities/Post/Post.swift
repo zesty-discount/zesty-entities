@@ -21,17 +21,20 @@ public extension Post {
         
         public struct Response: Codable, Equatable {
             public let id: UUID
+            public let createdAt: Date
             public let text: String
             public let imageIDs: [UUID]
             public let videoIDs: [UUID]
             
             public init(
                 id: UUID,
+                createdAt: Date,
                 text: String,
                 imageIDs: [UUID],
                 videoIDs: [UUID]
             ) {
                 self.id = id
+                self.createdAt = createdAt
                 self.text = text
                 self.imageIDs = imageIDs
                 self.videoIDs = videoIDs
@@ -47,6 +50,7 @@ public extension Post {
         
         public struct Response: Codable, Equatable {
             public let id: UUID
+            public let createdAt: Date
             public let text: String
             public let imageIDs: [UUID]
             public let videoIDs: [UUID]
@@ -54,12 +58,14 @@ public extension Post {
             
             public init(
                 id: UUID,
+                createdAt: Date,
                 text: String,
                 imageIDs: [UUID],
                 videoIDs: [UUID],
                 tags: [String]
             ) {
                 self.id = id
+                self.createdAt = createdAt
                 self.text = text
                 self.imageIDs = imageIDs
                 self.videoIDs = videoIDs
@@ -75,6 +81,7 @@ public extension Post {
         
         public struct Response: Codable, Equatable {
             public let id: UUID
+            public let createdAt: Date
             public let user: User.Detail.Response
             public let comments: [Comment.List.Response]
             public let text: String
@@ -84,6 +91,7 @@ public extension Post {
             
             public init(
                 id: UUID,
+                createdAt: Date,
                 user: User.Detail.Response,
                 comments: [Comment.List.Response],
                 text: String,
@@ -92,6 +100,7 @@ public extension Post {
                 tags: [String]
             ) {
                 self.id = id
+                self.createdAt = createdAt
                 self.user = user
                 self.text = text
                 self.comments = comments

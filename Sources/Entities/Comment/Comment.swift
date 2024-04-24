@@ -72,7 +72,7 @@ public extension Comment {
         public struct Response: Codable, Equatable {
             public let id: UUID
             public let text: String
-            public let parentID: UUID
+            public let parentID: UUID?
             public let children: [Comment.Detail.Response]
             public let postID: UUID
             public let user: User.Detail.Response
@@ -80,7 +80,7 @@ public extension Comment {
             public init(
                 id: UUID,
                 text: String,
-                parentID: UUID,
+                parentID: UUID?,
                 children: [Comment.Detail.Response],
                 postID: UUID,
                 user: User.Detail.Response

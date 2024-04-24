@@ -77,7 +77,7 @@ public extension Comment {
             public let postID: UUID
             public let user: User.Detail.Response
 
-            init(
+            public init(
                 id: UUID,
                 text: String,
                 parentID: UUID,

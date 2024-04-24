@@ -67,4 +67,31 @@ public extension Comment {
             }
         }
     }
+    
+    enum Detail {
+        public struct Response: Codable, Equatable {
+            public let id: UUID
+            public let text: String
+            public let parentID: UUID
+            public let children: [Comment.Detail.Response]
+            public let postID: UUID
+            public let user: User.Detail.Response
+
+            init(
+                id: UUID,
+                text: String,
+                parentID: UUID,
+                children: [Comment.Detail.Response],
+                postID: UUID,
+                user: User.Detail.Response
+            ) {
+                self.id = id
+                self.text = text
+                self.parentID = parentID
+                self.children = children
+                self.postID = postID
+                self.user = user
+            }
+        }
+    }
 }

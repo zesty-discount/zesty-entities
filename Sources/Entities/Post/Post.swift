@@ -52,23 +52,26 @@ public extension Post {
             public let id: UUID
             public let createdAt: Date
             public let text: String
-            public let imageIDs: [UUID]
-            public let videoIDs: [UUID]
+            public let thumbnail: UUID
+            public let user: User.List.Response
+            public let commentCount: Int
             public let tags: [String]
             
             public init(
                 id: UUID,
                 createdAt: Date,
                 text: String,
-                imageIDs: [UUID],
-                videoIDs: [UUID],
+                thumbnail: UUID,
+                user: User.List.Response,
+                commentCount: Int,
                 tags: [String]
             ) {
                 self.id = id
                 self.createdAt = createdAt
                 self.text = text
-                self.imageIDs = imageIDs
-                self.videoIDs = videoIDs
+                self.thumbnail = thumbnail
+                self.user = user
+                self.commentCount = commentCount
                 self.tags = tags
             }
         }

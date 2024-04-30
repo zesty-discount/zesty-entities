@@ -54,6 +54,7 @@ public extension Post {
             public let text: String
             public let thumbnail: UUID
             public let user: User.List.Response
+            public let likes: Int
             public let commentCount: Int
             public let tags: [String]
             
@@ -63,6 +64,7 @@ public extension Post {
                 text: String,
                 thumbnail: UUID,
                 user: User.List.Response,
+                likes: Int,
                 commentCount: Int,
                 tags: [String]
             ) {
@@ -71,6 +73,7 @@ public extension Post {
                 self.text = text
                 self.thumbnail = thumbnail
                 self.user = user
+                self.likes = likes
                 self.commentCount = commentCount
                 self.tags = tags
             }
@@ -88,6 +91,7 @@ public extension Post {
             public let user: User.Detail.Response
             public let comments: [Comment.List.Response]
             public let text: String
+            public let likes: Int
             public let imageIDs: [UUID]
             public let videoIDs: [UUID]
             public let tags: [String]
@@ -98,6 +102,7 @@ public extension Post {
                 user: User.Detail.Response,
                 comments: [Comment.List.Response],
                 text: String,
+                likes: Int,
                 imageIDs: [UUID],
                 videoIDs: [UUID],
                 tags: [String]
@@ -106,6 +111,7 @@ public extension Post {
                 self.createdAt = createdAt
                 self.user = user
                 self.text = text
+                self.likes = likes
                 self.comments = comments
                 self.imageIDs = imageIDs
                 self.videoIDs = videoIDs

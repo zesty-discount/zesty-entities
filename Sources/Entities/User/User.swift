@@ -10,6 +10,7 @@ public extension User {
             public let firstName: String?
             public let lastName: String?
             public let location: Location?
+            public let avatar: UUID?
             public let isAdmin: Bool
             public let isEmailVerified: Bool
 
@@ -19,6 +20,7 @@ public extension User {
                 firstName: String? = nil,
                 lastName: String? = nil,
                 location: Location? = nil,
+                avatar: UUID? = nil,
                 isAdmin: Bool,
                 isEmailVerified: Bool
             ) {
@@ -27,6 +29,7 @@ public extension User {
                 self.firstName = firstName
                 self.lastName = lastName
                 self.location = location
+                self.avatar = avatar
                 self.isAdmin = isAdmin
                 self.isEmailVerified = isEmailVerified
             }
@@ -87,17 +90,20 @@ public extension User {
             public let id: UUID
             public let firstName: String?
             public let lastName: String?
+            public let avatar: UUID?
             public let email: String
 
             public init(
                 id: UUID,
                 firstName: String? = nil,
                 lastName: String? = nil,
+                avatar: UUID? = nil,
                 email: String
             ) {
                 self.id = id
                 self.firstName = firstName
                 self.lastName = lastName
+                self.avatar = avatar
                 self.email = email
             }
         }

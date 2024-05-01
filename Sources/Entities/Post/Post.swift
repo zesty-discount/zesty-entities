@@ -4,15 +4,18 @@ public enum Post {}
 public extension Post {
     enum Create {
         public struct Request: Codable, Equatable {
+            public let title: String
             public let text: String
             public let imageIDs: [UUID]
             public let videoIDs: [UUID]
             
             public init(
+                title: String,
                 text: String,
                 imageIDs: [UUID],
                 videoIDs: [UUID]
             ) {
+                self.title = title
                 self.text = text
                 self.imageIDs = imageIDs
                 self.videoIDs = videoIDs
@@ -21,6 +24,7 @@ public extension Post {
         
         public struct Response: Codable, Equatable {
             public let id: UUID
+            public let title: String
             public let createdAt: Date
             public let text: String
             public let imageIDs: [UUID]
@@ -28,12 +32,14 @@ public extension Post {
             
             public init(
                 id: UUID,
+                title: String,
                 createdAt: Date,
                 text: String,
                 imageIDs: [UUID],
                 videoIDs: [UUID]
             ) {
                 self.id = id
+                self.title = title
                 self.createdAt = createdAt
                 self.text = text
                 self.imageIDs = imageIDs
@@ -50,6 +56,7 @@ public extension Post {
         
         public struct Response: Codable, Equatable {
             public let id: UUID
+            public let title: String
             public let createdAt: Date
             public let text: String
             public let thumbnail: UUID
@@ -60,6 +67,7 @@ public extension Post {
             
             public init(
                 id: UUID,
+                title: String,
                 createdAt: Date,
                 text: String,
                 thumbnail: UUID,
@@ -69,6 +77,7 @@ public extension Post {
                 tags: [String]
             ) {
                 self.id = id
+                self.title = title
                 self.createdAt = createdAt
                 self.text = text
                 self.thumbnail = thumbnail
@@ -87,6 +96,7 @@ public extension Post {
         
         public struct Response: Codable, Equatable {
             public let id: UUID
+            public let title: String
             public let createdAt: Date
             public let user: User.Detail.Response
             public let comments: [Comment.List.Response]
@@ -98,6 +108,7 @@ public extension Post {
             
             public init(
                 id: UUID,
+                title: String,
                 createdAt: Date,
                 user: User.Detail.Response,
                 comments: [Comment.List.Response],
@@ -108,6 +119,7 @@ public extension Post {
                 tags: [String]
             ) {
                 self.id = id
+                self.title = title
                 self.createdAt = createdAt
                 self.user = user
                 self.text = text

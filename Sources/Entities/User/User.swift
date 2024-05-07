@@ -13,6 +13,8 @@ public extension User {
             public let avatar: UUID?
             public let isAdmin: Bool
             public let isEmailVerified: Bool
+            public let followers: [User.List.Response]
+            public let following: [User.List.Response]
 
             public init(
                 id: UUID,
@@ -21,6 +23,8 @@ public extension User {
                 lastName: String? = nil,
                 location: Location? = nil,
                 avatar: UUID? = nil,
+                followers: [User.List.Response] = [],
+                following: [User.List.Response] = [],
                 isAdmin: Bool,
                 isEmailVerified: Bool
             ) {
@@ -30,6 +34,8 @@ public extension User {
                 self.lastName = lastName
                 self.location = location
                 self.avatar = avatar
+                self.followers = followers
+                self.following = following
                 self.isAdmin = isAdmin
                 self.isEmailVerified = isEmailVerified
             }
@@ -92,19 +98,25 @@ public extension User {
             public let lastName: String?
             public let avatar: UUID?
             public let email: String
+            public let followersCount: Int
+            public let followingCount: Int
 
             public init(
                 id: UUID,
                 firstName: String? = nil,
                 lastName: String? = nil,
                 avatar: UUID? = nil,
-                email: String
+                email: String,
+                followersCount: Int,
+                followingCount: Int
             ) {
                 self.id = id
                 self.firstName = firstName
                 self.lastName = lastName
                 self.avatar = avatar
                 self.email = email
+                self.followersCount = followersCount
+                self.followingCount = followingCount
             }
         }
     }

@@ -7,7 +7,6 @@ public enum AuthenticationError: String, IdentifiableError {
     case refreshTokenOrUserNotFound = "refresh_token_or_user_not_found"
     case refreshTokenHasExpired = "refresh_token_has_expired"
     case accessTokenHasExpired = "access_token_has_expired"
-    case userNotFound = "user_not_found"
     case userNotAuthorized = "user_not_authorized"
     case emailTokenHasExpired = "email_token_has_expired"
     case emailTokenNotFound = "email_token_not_found"
@@ -35,8 +34,6 @@ public enum AuthenticationError: String, IdentifiableError {
             return "Access token has expired"
         case .refreshTokenHasExpired:
             return "Refresh token has expired"
-        case .userNotFound:
-            return "User was not found"
         case .userNotAuthorized:
             return "User is not authorized for the requested action"
         case .emailTokenNotFound:

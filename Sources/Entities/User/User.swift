@@ -104,7 +104,7 @@ public extension User {
                 firstName: String? = nil,
                 lastName: String? = nil,
                 avatar: UUID? = nil,
-                email: String,
+                email: String
             ) {
                 self.id = id
                 self.firstName = firstName

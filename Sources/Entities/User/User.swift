@@ -98,8 +98,6 @@ public extension User {
             public let lastName: String?
             public let avatar: UUID?
             public let email: String
-            public let followersCount: Int
-            public let followingCount: Int
 
             public init(
                 id: UUID,
@@ -107,16 +105,12 @@ public extension User {
                 lastName: String? = nil,
                 avatar: UUID? = nil,
                 email: String,
-                followersCount: Int,
-                followingCount: Int
             ) {
                 self.id = id
                 self.firstName = firstName
                 self.lastName = lastName
                 self.avatar = avatar
                 self.email = email
-                self.followersCount = followersCount
-                self.followingCount = followingCount
             }
         }
     }

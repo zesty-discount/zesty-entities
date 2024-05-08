@@ -7,6 +7,12 @@ public extension Media {
         case photo, video
     }
     
+    enum Size: String, Codable, Equatable {
+        case s = "small"
+        case m = "medium"
+        case o = "original"
+    }
+    
     enum Upload {
         public struct Request: Codable, Equatable {
             public let data: Data
@@ -41,9 +47,14 @@ public extension Media {
     enum Download {
         public struct Request: Codable, Equatable {
             public let id: UUID
+            public let size: Size
             
-            public init(id: UUID) {
+            public init(
+                id: UUID,
+                size: Size
+            ) {
                 self.id = id
+                self.size = size
             }
         }
         

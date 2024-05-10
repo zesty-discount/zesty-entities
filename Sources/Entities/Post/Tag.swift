@@ -1,10 +1,12 @@
 import Foundation
 
-public enum Tag: String, Codable {
+public enum Tag: String, Codable, CaseIterable, Identifiable {
     case under25 = "under_25"
     case local = "local_services"
     case fresh = "fresh_produce"
     case costco = "costco_deals"
+    
+    public var id: String { rawValue }
     
     public var icon: String {
         switch self {

@@ -1,10 +1,12 @@
 import Foundation
 
-public enum Category: String, Codable {
+public enum Category: String, Codable, CaseIterable, Identifiable {
     case grocery = "grocery"
     case organic = "organic_food"
     case restaurant = "restaurant"
     case homeKitchen = "home_kitchen"
+    
+    public var id: String { rawValue }
     
     public var name: String {
         switch self {

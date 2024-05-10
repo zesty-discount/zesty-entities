@@ -6,17 +6,23 @@ public extension Post {
         public struct Request: Codable, Equatable {
             public let title: String
             public let text: String
+            public let category: Category
+            public let tags: [Tag]
             public let imageIDs: [UUID]
             public let videoIDs: [UUID]
             
             public init(
                 title: String,
                 text: String,
+                category: Category,
+                tags: [Tag],
                 imageIDs: [UUID],
                 videoIDs: [UUID]
             ) {
                 self.title = title
                 self.text = text
+                self.category = category
+                self.tags = tags
                 self.imageIDs = imageIDs
                 self.videoIDs = videoIDs
             }
@@ -27,6 +33,8 @@ public extension Post {
             public let title: String
             public let createdAt: Date
             public let text: String
+            public let category: Category
+            public let tags: [Tag]
             public let imageIDs: [UUID]
             public let videoIDs: [UUID]
             
@@ -35,6 +43,8 @@ public extension Post {
                 title: String,
                 createdAt: Date,
                 text: String,
+                category: Category,
+                tags: [Tag],
                 imageIDs: [UUID],
                 videoIDs: [UUID]
             ) {
@@ -42,6 +52,8 @@ public extension Post {
                 self.title = title
                 self.createdAt = createdAt
                 self.text = text
+                self.category = category
+                self.tags = tags
                 self.imageIDs = imageIDs
                 self.videoIDs = videoIDs
             }
@@ -101,10 +113,11 @@ public extension Post {
             public let user: User.Detail.Response
             public let comments: [Comment.List.Response]
             public let text: String
+            public let category: Category
+            public let tags: [Tag]
             public let likes: Int
             public let imageIDs: [UUID]
             public let videoIDs: [UUID]
-            public let tags: [String]
             
             public init(
                 id: UUID,
@@ -113,21 +126,23 @@ public extension Post {
                 user: User.Detail.Response,
                 comments: [Comment.List.Response],
                 text: String,
+                category: Category,
+                tags: [Tag],
                 likes: Int,
                 imageIDs: [UUID],
-                videoIDs: [UUID],
-                tags: [String]
+                videoIDs: [UUID]
             ) {
                 self.id = id
                 self.title = title
                 self.createdAt = createdAt
                 self.user = user
                 self.text = text
+                self.category = category
+                self.tags = tags
                 self.likes = likes
                 self.comments = comments
                 self.imageIDs = imageIDs
                 self.videoIDs = videoIDs
-                self.tags = tags
             }
         }
     }

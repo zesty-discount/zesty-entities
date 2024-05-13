@@ -1,14 +1,18 @@
 import Foundation
 
 public enum Device {
+    public enum System: String, Codable, Equatable {
+        case ios, android
+    }
+    
     public enum Create {
         public struct Request: Codable, Equatable {
-            public let system: String
+            public let system: System
             public let osVersion: String
             public let pushToken: String?
             
             public init(
-                system: String,
+                system: System,
                 osVersion: String,
                 pushToken: String?
             ) {
@@ -20,13 +24,13 @@ public enum Device {
         
         public struct Response: Codable, Equatable {
             public let id: UUID
-            public let system: String
+            public let system: System
             public let osVersion: String
             public let pushToken: String?
             
             public init(
                 id: UUID,
-                system: String,
+                system: System,
                 osVersion: String,
                 pushToken: String?
             ) {
@@ -43,13 +47,13 @@ public enum Device {
         
         public struct Response: Codable, Equatable {
             public let id: UUID
-            public let system: String
+            public let system: System
             public let osVersion: String
             public let pushToken: String?
             
             public init(
                 id: UUID,
-                system: String,
+                system: System,
                 osVersion: String,
                 pushToken: String?
             ) {

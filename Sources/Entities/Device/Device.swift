@@ -21,25 +21,6 @@ public enum Device {
                 self.pushToken = pushToken
             }
         }
-        
-        public struct Response: Codable, Equatable {
-            public let id: UUID
-            public let system: System
-            public let osVersion: String
-            public let pushToken: String?
-            
-            public init(
-                id: UUID,
-                system: System,
-                osVersion: String,
-                pushToken: String?
-            ) {
-                self.id = id
-                self.system = system
-                self.osVersion = osVersion
-                self.pushToken = pushToken
-            }
-        }
     }
     
     public enum Update {
@@ -53,25 +34,6 @@ public enum Device {
                 osVersion: String?,
                 pushToken: String?
             ) {
-                self.system = system
-                self.osVersion = osVersion
-                self.pushToken = pushToken
-            }
-        }
-        
-        public struct Response: Codable, Equatable {
-            public let id: UUID
-            public let system: System
-            public let osVersion: String
-            public let pushToken: String?
-            
-            public init(
-                id: UUID,
-                system: System,
-                osVersion: String,
-                pushToken: String?
-            ) {
-                self.id = id
                 self.system = system
                 self.osVersion = osVersion
                 self.pushToken = pushToken

@@ -2,7 +2,7 @@ import Foundation
 
 public enum Device {
     public enum System: String, Codable, Equatable {
-        case ios, android
+        case ios, android, unknown
     }
     
     public enum Create {

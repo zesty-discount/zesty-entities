@@ -12,6 +12,8 @@ public enum ContentError: String, IdentifiableError {
     case mediaToDownloadNotFound = "media_not_found"
     case mediaTooLarge = "media_too_large"
     case mediaTransformationFailed = "media_transformation_failed"
+    case deviceNotFound = "device_not_found"
+    case deviceMissingToken = "push_token_not_found"
     
     public var identifier: String {
         rawValue
@@ -39,6 +41,10 @@ public enum ContentError: String, IdentifiableError {
             "Media size exceeds limit"
         case .mediaTransformationFailed:
             "Media transformation failed"
+        case .deviceNotFound:
+            "Device not found"
+        case .deviceMissingToken:
+            "Device missing push token"
         }
     }
 }

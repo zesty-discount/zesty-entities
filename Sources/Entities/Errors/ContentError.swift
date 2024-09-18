@@ -14,7 +14,7 @@ public enum ContentError: String, IdentifiableError {
     case mediaTransformationFailed = "media_transformation_failed"
     case deviceNotFound = "device_not_found"
     case deviceMissingToken = "push_token_not_found"
-    case hashtagNotFount = "hashtag_not_found"
+    case hashtagNotFound = "hashtag_not_found"
     
     public var identifier: String {
         rawValue
@@ -46,7 +46,7 @@ public enum ContentError: String, IdentifiableError {
             "Device not found"
         case .deviceMissingToken:
             "Device missing push token"
-        case .hashtagNotFount:
+        case .hashtagNotFound:
             "Hashtag not found"
         }
     }

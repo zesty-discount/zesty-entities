@@ -76,6 +76,7 @@ public extension Post {
             public let likes: Int
             public let commentCount: Int
             public let tags: [String]
+            public let hashtags: [HashTag.List.Response]
             
             public init(
                 id: UUID,
@@ -86,7 +87,8 @@ public extension Post {
                 user: User.List.Response,
                 likes: Int,
                 commentCount: Int,
-                tags: [String]
+                tags: [String],
+                hashtags: [HashTag.List.Response]
             ) {
                 self.id = id
                 self.title = title
@@ -97,6 +99,7 @@ public extension Post {
                 self.likes = likes
                 self.commentCount = commentCount
                 self.tags = tags
+                self.hashtags = hashtags
             }
         }
     }
@@ -115,6 +118,7 @@ public extension Post {
             public let text: String
             public let category: Category
             public let tags: [Tag]
+            public let hashtags: [HashTag.List.Response]
             public let likes: Int
             public let imageIDs: [UUID]
             public let videoIDs: [UUID]
@@ -128,6 +132,7 @@ public extension Post {
                 text: String,
                 category: Category,
                 tags: [Tag],
+                hashtags: [HashTag.List.Response],
                 likes: Int,
                 imageIDs: [UUID],
                 videoIDs: [UUID]
@@ -139,6 +144,7 @@ public extension Post {
                 self.text = text
                 self.category = category
                 self.tags = tags
+                self.hashtags = hashtags
                 self.likes = likes
                 self.comments = comments
                 self.imageIDs = imageIDs

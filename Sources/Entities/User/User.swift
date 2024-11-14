@@ -15,6 +15,7 @@ public extension User {
             public let isEmailVerified: Bool
             public let followers: [User.List.Response]
             public let following: [User.List.Response]
+            public let businesses: [Business.List.Response]
 
             public init(
                 id: UUID,
@@ -26,7 +27,8 @@ public extension User {
                 followers: [User.List.Response] = [],
                 following: [User.List.Response] = [],
                 isAdmin: Bool,
-                isEmailVerified: Bool
+                isEmailVerified: Bool,
+                businesses: [Business.List.Response] = []
             ) {
                 self.id = id
                 self.email = email
@@ -38,6 +40,7 @@ public extension User {
                 self.following = following
                 self.isAdmin = isAdmin
                 self.isEmailVerified = isEmailVerified
+                self.businesses = businesses
             }
         }
     }

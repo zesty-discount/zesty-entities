@@ -42,7 +42,6 @@ public extension Business {
         }
         
         public struct Response: Codable, Equatable {
-            public let userID: UUID
             public let id: UUID
             public let email: String
             public let isEmailVerified: Bool
@@ -73,7 +72,6 @@ public extension Business {
                 avatarId: UUID,
                 isBusinessVerified: Bool
             ) {
-                self.userID = userID
                 self.id = id
                 self.email = email
                 self.isEmailVerified = isEmailVerified
@@ -87,6 +85,45 @@ public extension Business {
                 self.photoIds = photoIds
                 self.avatarId = avatarId
                 self.isBusinessVerified = isBusinessVerified
+            }
+        }
+    }
+    
+    enum List {
+        public struct Response: Codable, Equatable {
+            public let id: UUID
+            public let email: String
+            public let name: String
+            public let openingTimes: [OpeningTime]
+            public let industry: String
+            public let website: String?
+            public let phone: String
+            public let contactEmail: String
+            public let description: String
+            public let photoIds: [UUID]
+            
+            public init(
+                id: UUID,
+                email: String,
+                name: String,
+                openingTimes: [OpeningTime],
+                industry: String,
+                website: String?,
+                phone: String,
+                contactEmail: String,
+                description: String,
+                photoIds: [UUID]
+            ) {
+                self.id = id
+                self.email = email
+                self.name = name
+                self.openingTimes = openingTimes
+                self.industry = industry
+                self.website = website
+                self.phone = phone
+                self.contactEmail = contactEmail
+                self.description = description
+                self.photoIds = photoIds
             }
         }
     }

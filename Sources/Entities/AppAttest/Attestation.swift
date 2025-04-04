@@ -2,7 +2,7 @@ import Foundation
 
 public enum Attestation {
     public enum Challenge {
-        public struct Response: Codable {
+        public struct Response: Codable, Sendable {
             public let value: String
             
             public init(value: String) {
@@ -12,7 +12,7 @@ public enum Attestation {
     }
     
     public enum Verification {
-        public struct Request: Codable {
+        public struct Request: Codable, Sendable {
             public let attestation: Data
             public let challenge: String
             public let keyID: Data

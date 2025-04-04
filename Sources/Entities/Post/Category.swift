@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Category: String, Codable, CaseIterable, Identifiable {
+public enum Category: String, Codable, CaseIterable, Identifiable, Sendable {
     case grocery = "grocery"
     case organic = "organic_food"
     case restaurant = "restaurant"

@@ -2,7 +2,7 @@ import Foundation
 
 public extension Places {
     enum Geocode {
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let placeId: String
             public let address: String
             public let lat: Double

@@ -4,7 +4,7 @@ public enum User {}
 
 public extension User {
     enum Detail {
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let email: String
             public let firstName: String?
@@ -43,7 +43,7 @@ public extension User {
     }
     
     enum Update {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let email: String?
             public let firstName: String?
             public let lastName: String?
@@ -62,7 +62,7 @@ public extension User {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let email: String
             public let firstName: String?
@@ -92,7 +92,7 @@ public extension User {
     }
     
     enum List {
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let firstName: String?
             public let lastName: String?

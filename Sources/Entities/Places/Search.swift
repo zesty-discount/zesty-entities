@@ -3,7 +3,7 @@ import Foundation
 public enum Places {}
 
 public extension Places {
-    struct Place: Codable, Equatable {
+    struct Place: Codable, Equatable, Sendable {
         public let name: String
         public let address: String
         public let latitude: Double
@@ -23,7 +23,7 @@ public extension Places {
     }
     
     enum Search {
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let places: [Place]
             
             public init(places: [Place]) {

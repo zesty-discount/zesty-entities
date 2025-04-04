@@ -4,7 +4,7 @@ public enum Business {}
 
 public extension Business {
     enum Create {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let name: String
             public let openingTimes: [OpeningTime]
             public let industry: String
@@ -41,7 +41,7 @@ public extension Business {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let userID: UUID
             public let id: UUID
             public let email: String
@@ -93,8 +93,8 @@ public extension Business {
 }
 
 public extension Business {
-    struct OpeningTime: Codable, Equatable {
-        public enum Day: String, Codable, Equatable {
+    struct OpeningTime: Codable, Equatable, Sendable {
+        public enum Day: String, Codable, Equatable, Sendable {
             case monday
             case tuesday
             case wednesday

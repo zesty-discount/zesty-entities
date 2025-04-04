@@ -4,7 +4,7 @@ public enum Auth {}
 
 public extension Auth {
     enum Login {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let email: String
             public let password: String
             
@@ -17,7 +17,7 @@ public extension Auth {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let token: TokenRefresh.Response
             public let user: User.Detail.Response
             
@@ -32,7 +32,7 @@ public extension Auth {
     }
     
     enum SignUp {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let email: String
             public let password: String
             public let location: Location?
@@ -54,7 +54,7 @@ public extension Auth {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let token: TokenRefresh.Response
             public let user: User.Detail.Response
 
@@ -69,7 +69,7 @@ public extension Auth {
     }
     
     enum PasswordReset {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let email: String
             
             public init(email: String) {
@@ -79,7 +79,7 @@ public extension Auth {
     }
     
     enum TokenRefresh {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let refreshToken: String
             
             public init(refreshToken: String) {
@@ -87,7 +87,7 @@ public extension Auth {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let refreshToken: String
             public let accessToken: String
             
@@ -102,7 +102,7 @@ public extension Auth {
     }
     
     enum Apple {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let firstName: String?
             public let lastName: String?
             public let appleIdentityToken: String
@@ -118,7 +118,7 @@ public extension Auth {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let token: TokenRefresh.Response
             public let user: User.Detail.Response
 

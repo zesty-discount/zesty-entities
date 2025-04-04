@@ -3,7 +3,7 @@ import Foundation
 public enum HashTag {}
 public extension HashTag {
     enum Create {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let tag: String
             
             public init(
@@ -13,7 +13,7 @@ public extension HashTag {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let tag: String
             public let createdAt: Date
@@ -31,12 +31,11 @@ public extension HashTag {
     }
     
     enum List {
-        public struct Request: Codable, Equatable {
-            
+        public struct Request: Codable, Equatable, Sendable {
             public init() {}
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let tag: String
             public let createdAt: Date
@@ -54,11 +53,11 @@ public extension HashTag {
     }
     
     enum Detail {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public init() {}
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let tag: String
             public let createdAt: Date

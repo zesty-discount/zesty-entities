@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Tag: String, Codable, CaseIterable, Identifiable {
+public enum Tag: String, Codable, CaseIterable, Identifiable, Sendable {
     case under25 = "under_25"
     case local = "local_services"
     case fresh = "fresh_produce"

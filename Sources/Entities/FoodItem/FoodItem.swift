@@ -3,7 +3,7 @@ import Foundation
 public enum FoodItems {}
 public extension FoodItems {
     enum Autocomplete {
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let name: String
             public let id: Int
             public let thumbnail: String

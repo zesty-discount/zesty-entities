@@ -2,12 +2,12 @@ import Foundation
 
 public enum ShoppingList {}
 public extension ShoppingList {
-    enum Category: String, Codable, Equatable {
+    enum Category: String, Codable, Equatable, Sendable {
         case deals, premium, undefined
     }
 
     enum Add {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let products: [UUID]
             public let category: Category
             
@@ -20,7 +20,7 @@ public extension ShoppingList {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let deals: [Product.List.Response]
             public let premium: [Product.List.Response]
             

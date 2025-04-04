@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Location: Codable, Equatable {
+public struct Location: Codable, Equatable, Sendable {
     public let address: String
     public let city: String
     public let zipcode: String

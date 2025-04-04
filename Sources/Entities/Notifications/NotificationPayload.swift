@@ -1,15 +1,15 @@
 import Foundation
 
-public struct NotificationPayload: Codable, Equatable {
-    public enum Path: String, Codable {
+public struct NotificationPayload: Codable, Equatable, Sendable {
+    public enum Path: String, Codable, Sendable {
         case post
         case discover
         case shoppingList = "shopping_list"
     }
-    
+
     public let path: Path
     public let postId: UUID?
-    
+
     public init(
         path: Path,
         postId: UUID? = nil

@@ -2,7 +2,7 @@ import Foundation
 
 public extension Places {
     enum Autocomplete {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let query: String
             
             public init(query: String) {
@@ -10,8 +10,8 @@ public extension Places {
             }
         }
         
-        public struct Response: Codable, Equatable {
-            public struct Suggestion: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
+            public struct Suggestion: Codable, Equatable, Sendable {
                 public let placeId: String
                 public let mainText: String
                 public let secondaryText: String

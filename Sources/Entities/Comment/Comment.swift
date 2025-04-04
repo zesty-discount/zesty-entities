@@ -4,7 +4,7 @@ public enum Comment {}
 
 public extension Comment {
     enum Create {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let text: String
             
             public init(
@@ -14,7 +14,7 @@ public extension Comment {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let createdAt: Date
             public let text: String
@@ -38,7 +38,7 @@ public extension Comment {
     }
     
     enum List {
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let createdAt: Date
             public let text: String
@@ -63,7 +63,7 @@ public extension Comment {
     
     @available(*, deprecated, message: "Replying to comments has been put on hold for now")
     enum Reply {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let text: String
             
             public init(
@@ -73,7 +73,7 @@ public extension Comment {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let text: String
             public let parentId: UUID

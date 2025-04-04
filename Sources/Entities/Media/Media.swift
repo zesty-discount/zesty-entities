@@ -3,18 +3,18 @@ import Foundation
 public enum Media {}
 
 public extension Media {
-    enum `Type`: String, Codable, Equatable {
+    enum `Type`: String, Codable, Equatable, Sendable {
         case photo, video
     }
     
-    enum Size: String, Codable, Equatable {
+    enum Size: String, Codable, Equatable, Sendable {
         case s = "small"
         case m = "medium"
         case o = "original"
     }
     
     enum Upload {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let data: Data
             public let ext: String
             public let type: `Type`
@@ -30,7 +30,7 @@ public extension Media {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let type: `Type`
 
@@ -45,7 +45,7 @@ public extension Media {
     }
     
     enum Download {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let id: UUID
             public let size: Size
             
@@ -58,7 +58,7 @@ public extension Media {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let data: Data
             
             public init(data: Data) {

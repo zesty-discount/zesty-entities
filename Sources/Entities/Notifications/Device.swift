@@ -1,12 +1,12 @@
 import Foundation
 
 public enum Device {
-    public enum System: String, Codable, Equatable {
+    public enum System: String, Codable, Equatable, Sendable {
         case ios, android, unknown
     }
     
     public enum Create {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let system: System
             public let osVersion: String
             public let pushToken: String?
@@ -24,7 +24,7 @@ public enum Device {
     }
     
     public enum Update {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let system: System?
             public let osVersion: String?
             public let pushToken: String?
@@ -42,9 +42,11 @@ public enum Device {
     }
 
     public enum Detail {
-        public struct Request: Codable, Equatable {}
+        public struct Request: Codable, Equatable, Sendable {
+            public init() {}
+        }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let system: System
             public let osVersion: String

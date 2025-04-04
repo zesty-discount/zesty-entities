@@ -3,7 +3,7 @@ import Foundation
 public enum Post {}
 public extension Post {
     enum Create {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public let title: String
             public let text: String
             public let category: Category
@@ -28,7 +28,7 @@ public extension Post {
             }
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let title: String
             public let createdAt: Date
@@ -61,12 +61,11 @@ public extension Post {
     }
     
     enum List {
-        public struct Request: Codable, Equatable {
-            
+        public struct Request: Codable, Equatable, Sendable {
             public init() {}
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let title: String
             public let createdAt: Date
@@ -105,11 +104,11 @@ public extension Post {
     }
     
     enum Detail {
-        public struct Request: Codable, Equatable {
+        public struct Request: Codable, Equatable, Sendable {
             public init() {}
         }
         
-        public struct Response: Codable, Equatable {
+        public struct Response: Codable, Equatable, Sendable {
             public let id: UUID
             public let title: String
             public let createdAt: Date
